@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="加密解密,js逆向,javascript加固" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="针对javascript代码加固的总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript加固">
+<meta property="og:url" content="https://lingwu111.github.io/javascript%E5%8A%A0%E5%9B%BA.html">
+<meta property="og:site_name" content="lingwu&#39; blog">
+<meta property="og:description" content="针对javascript代码加固的总结。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="article:published_time" content="2020-05-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-07-04T17:46:35.771Z">
+<meta property="article:author" content="lingwu">
+<meta property="article:tag" content="加密解密">
+<meta property="article:tag" content="js逆向">
+<meta property="article:tag" content="javascript加固">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lingwu111.github.io/images/loading.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lingwu111.github.io/javascript加固.html"/>
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d943226"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d943226"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>javascript加固 | lingwu' blog</title>
+  
+
+
+
+
+
+
+
+
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lingwu' blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">一个追求自由的安全爱好者</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益404">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lingwu111.github.io/javascript%E5%8A%A0%E5%9B%BA.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lingwu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lingwu' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">javascript加固</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-19T00:00:00+08:00">
+                2020-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">加密解密</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web%E6%B8%97%E9%80%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">web渗透</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  针对javascript代码加固的总结。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- build time:Sun Sep 06 2020 05:59:45 GMT+0800 (GMT+08:00) --><script type="text/javascript" src="https://lingwu111.github.io/js/src/bai.js"></script><h2 id="0-测试通用demo"><a href="#0-测试通用demo" class="headerlink" title="0.测试通用demo"></a>0.测试通用demo</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrs=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"java"</span>,<span class="string">"python"</span>,<span class="string">"js"</span>,<span class="string">"c++"</span>,<span class="string">"go"</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testDemo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;arrs.length;i++)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(arrs[i])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">testDemo()</span><br></pre></td></tr></table></figure><h2 id="1-JavaScript-压缩"><a href="#1-JavaScript-压缩" class="headerlink" title="1.JavaScript 压缩"></a>1.JavaScript 压缩</h2><p>JavaScript 压缩即去除 JavaScript 代码中的不必要的空格、换行等内容或者把一些可能公用的代码进行处理实现共享，最后输出的结果都压缩为几行内容，代码可读性变得很差，同时也能提高网站加载速度。</p><p>工具：Webpack、在线压缩工具</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arrs&#x3D;new Array(&quot;java&quot;,&quot;python&quot;,&quot;js&quot;,&quot;c++&quot;,&quot;go&quot;);function testDemo()&#123;for(i&#x3D;0;i&lt;arrs.length;i++)&#123;console.log(arrs[i])&#125;&#125;testDemo();</span><br></pre></td></tr></table></figure><p>还原工具：在线解缩工具、ide、chrome</p><p>可以发现通过压缩方式，几乎没有任何作用，因为这种压缩方式仅仅是降低了代码的直接可读性。</p><h2 id="2-JavaScript代码混淆"><a href="#2-JavaScript代码混淆" class="headerlink" title="2.JavaScript代码混淆"></a>2.JavaScript代码混淆</h2><p>使用变量替换、字符串阵列化、控制流平坦化、多态变异、僵尸函数、调试保护等手段，使代码变地难以阅读和分析，达到最终保护的目的。</p><p>混淆技术主要有以下几种：</p><ol><li>变量混淆:将带有含意的变量名、方法名、常量名随机变为无意义的类乱码字符串，降低代码可读性，如转成单个字符或十六进制字符串。</li><li>字符串混淆:将字符串阵列化集中放置、并可进行 MD5 或 Base64 加密存储，使代码中不出现明文字符串，这样可以避免使用全局搜索字符串的方式定位到入口点。</li><li>属性加密:针对 JavaScript 对象的属性进行加密转化，隐藏代码之间的调用关系。</li><li>控制流平坦化:打乱函数原有代码执行流程及函数调用关系，使代码逻变得混乱无序。</li><li>僵尸代码:随机在代码中插入无用的僵尸代码、僵尸函数，进一步使代码混乱。</li><li>调试保护:基于调试器特性，对当前运行环境进行检验，加入一些强制调试 debugger 语句，使其在调试模式下难以顺利执行 JavaScript 代码。</li><li>多态变异:使 JavaScript 代码每次被调用时，将代码自身即立刻自动发生变异，变化为与之前完全不同的代码，即功能完全不变，只是代码形式变异，以此杜绝代码被动态分析调试。</li><li>锁定域名:使 JavaScript 代码只能在指定域名下执行。</li><li>反格式化:如果对 JavaScript 代码进行格式化，则无法执行，导致浏览器假死。</li><li>特殊编码:将 JavaScript 完全编码为人不可读的代码，如表情符号、特殊表示内容等等。如使用 aaencode、jjencode、jsfuck 等工具对代码进行混淆和编码。</li><li>加壳干扰：在代码用eval包裹，然后对eval参数进行加密，并埋下陷阱，在解码时插入无用代码，干扰显示，大量换行、注释、字符串等大量特殊字符，导致显示卡顿。</li></ol><p>工具：Obfuscator</p><p>以下简单举几个有意思的例子：</p><h3 id="2-1调试保护"><a href="#2-1调试保护" class="headerlink" title="2.1调试保护"></a>2.1调试保护</h3><p>这里仅对demo做了修改标识符名称与调试保护，可以看到代码以经不是很好看懂了。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrs = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'java'</span>, <span class="string">'python'</span>, <span class="string">'js'</span>, <span class="string">'c++'</span>, <span class="string">'go'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testDemo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _0x3524b8 = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> _0x18f4aa = !![];</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">_0x4e8bb3, _0x4f8605</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> _0x21daca = _0x18f4aa ? <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (_0x4f8605) &#123;</span><br><span class="line">                    <span class="keyword">var</span> _0x290f33 = _0x4f8605[<span class="string">'apply'</span>](_0x4e8bb3, <span class="built_in">arguments</span>);</span><br><span class="line">                    _0x4f8605 = <span class="literal">null</span>;</span><br><span class="line">                    <span class="keyword">return</span> _0x290f33;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            &#125;;</span><br><span class="line">            _0x18f4aa = ![];</span><br><span class="line">            <span class="keyword">return</span> _0x21daca;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;();</span><br><span class="line">    (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        _0x3524b8(<span class="keyword">this</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> _0x2f125b = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'function\x20*\x5c(\x20*\x5c)'</span>);</span><br><span class="line">            <span class="keyword">var</span> _0x5e4484 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\x5c+\x5c+\x20*(?:[a-zA-Z_$][0-9a-zA-Z_$]*)'</span>, <span class="string">'i'</span>);</span><br><span class="line">            <span class="keyword">var</span> _0xb2a7b4 = nffas(<span class="string">'init'</span>);</span><br><span class="line">            <span class="keyword">if</span> (!_0x2f125b[<span class="string">'test'</span>](_0xb2a7b4 + <span class="string">'chain'</span>) || !_0x5e4484[<span class="string">'test'</span>](_0xb2a7b4 + <span class="string">'input'</span>)) &#123;</span><br><span class="line">                _0xb2a7b4(<span class="string">'0'</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                nffas();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)();</span><br><span class="line">    &#125;());</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0x0</span>; i &lt; arrs[<span class="string">'length'</span>]; i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>[<span class="string">'log'</span>](arrs[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">testDemo();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nffas</span>(<span class="params">_0x56a982</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">_0x6b9ad9</span>(<span class="params">_0x5641b1</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> _0x5641b1 === <span class="string">'string'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">_0x5b7ddc</span>) </span>&#123;</span><br><span class="line">            &#125;[<span class="string">'constructor'</span>](<span class="string">'while\x20(true)\x20&#123;&#125;'</span>)[<span class="string">'apply'</span>](<span class="string">'counter'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> ((<span class="string">''</span> + _0x5641b1 / _0x5641b1)[<span class="string">'length'</span>] !== <span class="number">0x1</span> || _0x5641b1 % <span class="number">0x14</span> === <span class="number">0x0</span>) &#123;</span><br><span class="line">                (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> !![];</span><br><span class="line">                &#125;[<span class="string">'constructor'</span>](<span class="string">'debu'</span> + <span class="string">'gger'</span>)[<span class="string">'call'</span>](<span class="string">'action'</span>));</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> ![];</span><br><span class="line">                &#125;[<span class="string">'constructor'</span>](<span class="string">'debu'</span> + <span class="string">'gger'</span>)[<span class="string">'apply'</span>](<span class="string">'stateObject'</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        _0x6b9ad9(++_0x5641b1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (_0x56a982) &#123;</span><br><span class="line">            <span class="keyword">return</span> _0x6b9ad9;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            _0x6b9ad9(<span class="number">0x0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (_0x30f316) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><pre><code>这里使用下条件断点的方式完轻松绕过。</code></pre><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/05/19/9OdHSrv3n7PQpoh.png" alt=""></p><h3 id="2-2反格式化"><a href="#2-2反格式化" class="headerlink" title="2.2反格式化"></a>2.2反格式化</h3><p>开启之后，混淆后的 JavaScript 会以强制一行形式显示，如果我们将混淆后的代码进行格式化（美化）或者重命名，该段代码将无法执行.</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/05/19/5Yn6mENWzdw9jtG.png" alt=""></p><h3 id="2-3控制流平坦化"><a href="#2-3控制流平坦化" class="headerlink" title="2.3控制流平坦化"></a>2.3控制流平坦化</h3><p>将代码的执行逻辑混淆，使其变得复杂难读。其基本思想是将一些逻辑处理块都统一加上一个前驱逻辑块，每个逻辑块都由前驱逻辑块进行条件判断和分发，构成一个个闭环逻辑，导致整个执行逻辑十分复杂难读。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrs = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'java'</span>, <span class="string">'python'</span>, <span class="string">'js'</span>, <span class="string">'c++'</span>, <span class="string">'go'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testDemo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = &#123;</span><br><span class="line">        <span class="string">'wQgkE'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">b, c</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> b &lt; c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0x0</span>; a[<span class="string">'wQgkE'</span>](i, arrs[<span class="string">'length'</span>]); i++) &#123;</span><br><span class="line">        <span class="built_in">console</span>[<span class="string">'log'</span>](arrs[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">testDemo();</span><br></pre></td></tr></table></figure><p>由于例子逻辑简单，只是一个简单的循环，但还是可以看出通过该方式处理后的代码，在循环前加了一个逻辑判断。因此，使用控制流扁平化可以使得执行逻辑更加复杂难读，前端混淆都会加上这个选项。</p><h3 id="2-4eval"><a href="#2-4eval" class="headerlink" title="2.4eval"></a>2.4eval</h3><p>js中的eval()方法就是一个js语言的执行器，它能把其中的参数按照JavaScript语法进行解析并执行，简单来说就是把原本的js代码变成了eval的参数，变成参数后代码就成了字符串，其中的一些字符就会被按照特定格式“编码”。</p><p>在线加解密工具：<a href="http://www.jqueryfuns.com/tools/jsencode" target="_blank" rel="noopener">http://www.jqueryfuns.com/tools/jsencode</a></p><p>效果如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eval</span>(<span class="function"><span class="keyword">function</span>(<span class="params">p,a,c,k,e,r</span>)</span>&#123;e=<span class="built_in">String</span>;<span class="keyword">if</span>(<span class="string">'0'</span>.replace(<span class="number">0</span>,e)==<span class="number">0</span>)&#123;<span class="keyword">while</span>(c--)r[e(c)]=k[c];k=[<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;<span class="keyword">return</span> r[e]||e&#125;];e=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span><span class="string">'[23]'</span>&#125;;c=<span class="number">1</span>&#125;;<span class="keyword">while</span>(c--)<span class="keyword">if</span>(k[c])p=p.replace(<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'\\b'</span>+e(c)+<span class="string">'\\b'</span>,<span class="string">'g'</span>),k[c]);<span class="keyword">return</span> p&#125;(<span class="string">'var 2=new Array("java","python","js","c++","go");function 3()&#123;for(i=0;i&lt;2.length;i++)&#123;console.log(2[i])&#125;&#125;3()'</span>,[],<span class="number">4</span>,<span class="string">'||arrs|testDemo'</span>.split(<span class="string">'|'</span>),<span class="number">0</span>,&#123;&#125;))</span><br></pre></td></tr></table></figure><h2 id="3-代码加密："><a href="#3-代码加密：" class="headerlink" title="3.代码加密："></a>3.代码加密：</h2><p>可以通过某种手段将 JavaScript 代码进行加密，转成人无法阅读或者解析的代码，如将代码完全抽象化加密，如 eval 加密。另外还有更强大的加密技术，可以直接将 JavaScript 代码用 C/C++ 实现，JavaScript 调用其编译后形成的文件来执行相应的功能，如 Emscripten 还有 WebAssembly。</p><p>基本思路是将一些核心逻辑使用诸如 C/C++ 语言来编写，并通过 JavaScript 调用执行，从而起到二进制级别的防护作用。</p><p>加密方式：</p><p>3.1Emscripten 这个编译器可以将 C / C++ 代码编译成 asm.js</p><p>3.2WebAssembly可以将 C / C++ 代码编译二进制字节码</p><p>先用在线工具 生成一个wasm文件，<a href="http://mbebenita.github.io/WasmExplorer/" target="_blank" rel="noopener">http://mbebenita.github.io/WasmExplorer/</a></p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/05/19/BgTY1OwrJEadDW4.png" alt=""></p><p>用例：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadWebAssembly</span>(<span class="params">filename, imports</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Fetch the file and compile it</span></span><br><span class="line">    <span class="keyword">return</span> fetch(filename)</span><br><span class="line">      .then(<span class="function"><span class="params">response</span> =&gt;</span> response.arrayBuffer())</span><br><span class="line">      .then(<span class="function"><span class="params">buffer</span> =&gt;</span> WebAssembly.compile(buffer))</span><br><span class="line">      .then(<span class="function"><span class="params">module</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// Create the imports for the module, including the</span></span><br><span class="line">        <span class="comment">// standard dynamic library imports</span></span><br><span class="line">        imports = imports || &#123;&#125;;</span><br><span class="line">        imports.env = imports.env || &#123;&#125;;</span><br><span class="line">        imports.env.memoryBase = imports.env.memoryBase || <span class="number">0</span>;</span><br><span class="line">        imports.env.tableBase = imports.env.tableBase || <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (!imports.env.memory) &#123;</span><br><span class="line">          imports.env.memory = <span class="keyword">new</span> WebAssembly.Memory(&#123; <span class="attr">initial</span>: <span class="number">256</span> &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!imports.env.table) &#123;</span><br><span class="line">          imports.env.table = <span class="keyword">new</span> WebAssembly.Table(&#123; <span class="attr">initial</span>: <span class="number">0</span>, <span class="attr">element</span>: <span class="string">'anyfunc'</span> &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Create the instance.</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> WebAssembly.Instance(<span class="built_in">module</span>, imports);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Main part of this example, loads the module and uses it.</span></span><br><span class="line">  loadWebAssembly(<span class="string">'test.wasm'</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">instance</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">var</span> exports = instance.exports; <span class="comment">// the exports of that instance</span></span><br><span class="line">      <span class="built_in">console</span>.log(exports._doubler(<span class="number">55</span>)) <span class="comment">// Output: 110</span></span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br></pre></td></tr></table></figure><!-- rebuild by neat -->
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    lingwu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lingwu111.github.io/javascript%E5%8A%A0%E5%9B%BA.html" title="javascript加固">https://lingwu111.github.io/javascript%E5%8A%A0%E5%9B%BA.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/" rel="tag"># 加密解密</a>
+          
+            <a href="/tags/js%E9%80%86%E5%90%91/" rel="tag"># js逆向</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%89%8D%E7%AB%AF%E5%8A%A0%E5%AF%86%E9%81%87%E7%9A%84%E5%9D%91.html" rel="next" title="记录一次前端加密遇的坑">
+                <i class="fa fa-chevron-left"></i> 记录一次前端加密遇的坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/%5B%E5%B0%8F%E6%8A%80%E5%B7%A7%5D%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E9%9C%80%E8%A6%81%E7%9A%84%E5%8F%8D%E5%90%91shell.html" rel="prev" title="【小技巧】快速生成需要的反向shell">
+                【小技巧】快速生成需要的反向shell <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">lingwu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/lingwu111" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:star.lingwu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/star_lingwu" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/wechat" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/qq_38376348" title="Pro+Hacker" target="_blank">Pro+Hacker</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sh4nn0n.com/" title="sh4nn0n" target="_blank">sh4nn0n</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://screwsec.com/" title="screwsec" target="_blank">screwsec</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-测试通用demo"><span class="nav-number">1.</span> <span class="nav-text">0.测试通用demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JavaScript-压缩"><span class="nav-number">2.</span> <span class="nav-text">1.JavaScript 压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-JavaScript代码混淆"><span class="nav-number">3.</span> <span class="nav-text">2.JavaScript代码混淆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1调试保护"><span class="nav-number">3.1.</span> <span class="nav-text">2.1调试保护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2反格式化"><span class="nav-number">3.2.</span> <span class="nav-text">2.2反格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3控制流平坦化"><span class="nav-number">3.3.</span> <span class="nav-text">2.3控制流平坦化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4eval"><span class="nav-number">3.4.</span> <span class="nav-text">2.4eval</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-代码加密："><span class="nav-number">4.</span> <span class="nav-text">3.代码加密：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lingwu</span>
+
+  
+</div>
+
+<span id="busuanzi_container_site_pv">
+<span class="with-love">
+    <i class="fa fa-eye"></i>
+  </span>
+  本站访客数：<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

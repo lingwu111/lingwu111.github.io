@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="社工,社会工程学" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="没有什么技术,但不太道德。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="社工篇-记一次不太道德的社工">
+<meta property="og:url" content="https://lingwu111.github.io/[%E7%A4%BE%E5%B7%A5%E7%AF%87]%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%B8%8D%E5%A4%AA%E9%81%93%E5%BE%B7%E7%9A%84%E7%A4%BE%E5%B7%A5.html">
+<meta property="og:site_name" content="lingwu&#39; blog">
+<meta property="og:description" content="没有什么技术,但不太道德。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="og:image" content="https://lingwu111.github.io/images/loading.gif">
+<meta property="article:published_time" content="2020-06-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-07-04T17:45:31.595Z">
+<meta property="article:author" content="lingwu">
+<meta property="article:tag" content="社工">
+<meta property="article:tag" content="社会工程学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lingwu111.github.io/images/loading.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://lingwu111.github.io/[社工篇]记一次不太道德的社工.html"/>
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d943226"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "2d943226"
+    });
+  daovoice('update');
+  </script>
+
+
+  <title>社工篇-记一次不太道德的社工 | lingwu' blog</title>
+  
+
+
+
+
+
+
+
+
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">lingwu' blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">一个追求自由的安全爱好者</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益404">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lingwu111.github.io/%5B%E7%A4%BE%E5%B7%A5%E7%AF%87%5D%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%B8%8D%E5%A4%AA%E9%81%93%E5%BE%B7%E7%9A%84%E7%A4%BE%E5%B7%A5.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lingwu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lingwu' blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">社工篇-记一次不太道德的社工</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-11T00:00:00+08:00">
+                2020-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A4%BE%E5%B7%A5/" itemprop="url" rel="index">
+                    <span itemprop="name">社工</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  没有什么技术,但不太道德。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- build time:Sun Sep 06 2020 05:59:45 GMT+0800 (GMT+08:00) --><script type="text/javascript" src="https://lingwu111.github.io/js/src/bai.js"></script><h2 id="0-起因"><a href="#0-起因" class="headerlink" title="0.起因"></a>0.起因</h2><p>一哥们打听我一高中女同学的微信，6年没联系的同学。。。以前我们用QQ较多，虽然有她电话，上大学肯定换号了。帮忙问了几个同学，没有结果。以前她和我一个小组的，关系有点。。所以不太想向太多人打听，但耐不住朋友的彩虹屁（<strong>主要原因</strong>是我也想要她的联系方式了，毕竟是美女），于是答应抽空看能不能问出来。</p><p><strong>注：当时很随意，没想过记录，所以开始部份没有截图，只是回忆过程。</strong></p><h2 id="1-准备"><a href="#1-准备" class="headerlink" title="1.准备"></a>1.准备</h2><p>已知信息：</p><p>姓名：岳XX</p><p>qq:159xxx0(一段时间观察，一直显示2G在线)</p><p>手机号：130xxx5（高中时存的，号主已换人）</p><p>大学学校：xxx理工大学（以前就知道，学院专业班级什么都不知道）</p><h2 id="2-开始"><a href="#2-开始" class="headerlink" title="2.开始"></a>2.开始</h2><p>最初觉的认识3年，信息了解的都差不多了，应该很容易就能查出来，后来发现想多了。。。</p><p>2.1google，百度等无脑上，只有一条中国xx大学201x年硕士研究生拟录取名单公示被收录。。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">20xxxx90 岳x 114xxxx803 xxx省xxx市xxx区xxx理工xxxx校</span><br><span class="line">区 03xxxx2 工程技术学院 08xxx0 安全科学与工程</span><br></pre></td></tr></table></figure><p>从姓名、学校、考号的年级看，觉的有点像真的，可是校区问了当地的大学同学，好像有点对不上。</p><p>2.2上大学、上研所在的贴吧没记录。</p><p>2.3电报里的社工机器人搜qq和以前那个手机号，也没结果。</p><p>这qq和个小号一样，啥都没有，那么大的社工库里竟然都搜不他的信息。</p><p>2.4找回qq密码功能，发现手机号为178xxxxxxxxxx02,</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/Fk8J6SGzrhsu5mn.png" alt=""></p><p>2.5我qq都看不到他空间，可能以前没备注或者时间太长都删我了，所以我看他一直是2g？不清楚这块，没试过。用小号冒充其他高中同学加他好友（没办法，万一真是删我了，我再加有点，，，还是用其他同学的名字吧），可惜等了几天没反映。八成这个号都不用了，改微信了。</p><p>2.6这耗挺长时间，没思路了。就差去暗网买当地用户数据库了。。。</p><p>2.7qq收到个垃圾邮件，点开删除。。。（好长时间也不用qq了，就是这段时间做这个，一直上），忽然看见以前一个高中班级群邮件，里面是医保信息，有身份证信息。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">身份证号：140*************************347</span><br></pre></td></tr></table></figure><p>2.8又多一个信息，然后网络搜索、电报等，按着来，又是啥都没有，再次陷入困局。</p><p>2.9无耐，报着试试看的心态，对这个账号进行申诉，因为我大号加着他好友（也不确定删了没有），身份证、姓名、这些常用的信息我都了解，本来没报希望，没想到。。。成功了。（可能账号长时间未登录，我加他好友时间够长。）有绑定安全手机，我不知道密码能申诉成功，笑了。</p><p>2.10上邮箱，看看敏感的东西</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/2ioTnszSPbQNmyt.png" alt=""></p><p>2.11看到淘宝账号</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/RM17a4ucGFYq2ny.png" alt=""></p><p>2.12检索相关信息，</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/7dUEci4GOy6wemh.png" alt=""></p><p>呃，在我一个高中同学的微博里关注者里看到他的名字了，看了下她的微博，没有有用的信息，都是转发抽奖的。顺便记了下用的手机。</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/4RlzH5xLrn289pi.png" alt=""></p><p>2.13继续邮件，直到看到这个。</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/LW9nCbtPi5vqkGa.png" alt=""></p><p>打开一看，里面自带一张照片，熟悉的面孔，还有专业，学号，那基本确定刚才的搜到的信息是真的了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">矿业工程学院 安全工程xxx1  岳xx 20xxxxx1</span><br></pre></td></tr></table></figure><p>仔细一想，别人给她发她自已的文档，发件人的名字还是她名字的缩写，猜测这个号是她另一个QQ,我说那个qq怎么啥都搜不到。。。</p><p>2.14新增一个信息</p><p>另一个QQ：28xxxxx1</p><p>2.15电报初步检索下：</p><p>虽然收费，至少能看到东西了，很明显手机号已经换成北京的了，但是显示的太少了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">其他:中国*******京）</span><br><span class="line">手机:17**********京]</span><br><span class="line">邮箱:28**********om</span><br></pre></td></tr></table></figure><p>2.16我都可以登录她的小号了，肯定也想着去申诉下这个大号，万一成了？可惜不行，没成功，上次申诉用完了运气。（专门看了下，没垃黑我，空间是只有自已能看，心没有很凉。）</p><p>2.17尝试其他途径搜索大号，没有任何结果。</p><p>2.18查了下他这个qq注册的网站</p><p>只找到一个。。。</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/LSqzjpug2tO8NMQ.png" alt=""></p><p>2.19查小号注册的网站</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/IerLbpT9FB1gKuA.png" alt=""></p><p>2.20智联，好东西，简历里肯定有联系方式吧。</p><p>重置智联密码，进去，啥都没有，浪费感情。</p><p>2.21通过邮件，还能看到，他的12306绑的这个邮箱，没办法，只能先重置密码了，随后通过某种方式告诉他密码。</p><p>果然12306每次都不会失望，信息又真，又爆露最多。</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/yxsMUnN2ASBcoD9.png" alt=""></p><p>可以看到手机号只有中间四位不知道。前三后四都出来了。</p><p>2.22知道是北京市的手机号了，直接过滤结果。</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/gHxeksCK8qFnOWX.png" alt=""></p><p>看到540条结果，还是有点多。</p><p>2.23利用阿里云空号码检测接口过滤下：</p><p>写个脚本处理下</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/Xw3aCxkNL1jhQYz.png" alt=""></p><p>真的有毒，540个没一个空号。</p><p>2.24导入通迅录</p><p>2.24.1.用qq邮箱导出一个通迅录</p><p>2.24.3修改里面的电话</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/FRCpiTEqMcknJgy.png" alt=""></p><p>2.24.3导入联系人文件</p><p>2.24.4.再以vcf格式导出联系人（编码utf-8）</p><p>2.24.5.移到手机里，这里为了不合手机联系人冲突，我开了vmos,在这里面操作。</p><p>2.24.5.微信通迅查看好友</p><p>发现有一个账号缩写是目标名字。。。</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/06/12/LC3xPAo82sS4XjT.png" alt=""></p><p>2.25确认信息</p><p>找到他的手机号后，通过支付宝确认是本人。</p><p>2.26处理结果</p><p>就是为了找个联系方式，没想到绕了一大圈，还重置了好几个账号密码，没办法，保险起见，不用自已的小号，买了一个微信号，加好友，把重置的信息都告诉她，顺便提醒记的改密码。。。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>任何一个环节没有注意，都可能导致严重的风险，虽然这个同学在网络上留下的痕迹真的不多，在社工裤里找到的信息有限，但作为与很多账号安全绑定的邮箱却没有作特殊的安全保护，导致轮陷，这点任何人都要注意。</p><p>最后一点，这样的社工真的不好。</p><!-- rebuild by neat -->
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    lingwu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://lingwu111.github.io/[%E7%A4%BE%E5%B7%A5%E7%AF%87]%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%B8%8D%E5%A4%AA%E9%81%93%E5%BE%B7%E7%9A%84%E7%A4%BE%E5%B7%A5.html" title="社工篇-记一次不太道德的社工">https://lingwu111.github.io/[%E7%A4%BE%E5%B7%A5%E7%AF%87]%E8%AE%B0%E4%B8%80%E6%AC%A1%E4%B8%8D%E5%A4%AA%E9%81%93%E5%BE%B7%E7%9A%84%E7%A4%BE%E5%B7%A5.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%A4%BE%E5%B7%A5/" rel="tag"># 社工</a>
+          
+            <a href="/tags/%E5%85%B6%E4%BB%96/" rel="tag"># 其他</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%5B%E5%B0%8F%E6%8A%80%E5%B7%A7%5D%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E9%9C%80%E8%A6%81%E7%9A%84%E5%8F%8D%E5%90%91shell.html" rel="next" title="【小技巧】快速生成需要的反向shell">
+                <i class="fa fa-chevron-left"></i> 【小技巧】快速生成需要的反向shell
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java_security_calendar_2019(day1-day4).html" rel="prev" title="java_security_calendar_2019(day1-day4)">
+                java_security_calendar_2019(day1-day4) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">lingwu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/lingwu111" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:star.lingwu@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/star_lingwu" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="/wechat" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/qq_38376348" title="Pro+Hacker" target="_blank">Pro+Hacker</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://sh4nn0n.com/" title="sh4nn0n" target="_blank">sh4nn0n</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://screwsec.com/" title="screwsec" target="_blank">screwsec</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-起因"><span class="nav-number">1.</span> <span class="nav-text">0.起因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备"><span class="nav-number">2.</span> <span class="nav-text">1.准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-开始"><span class="nav-number">3.</span> <span class="nav-text">2.开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lingwu</span>
+
+  
+</div>
+
+<span id="busuanzi_container_site_pv">
+<span class="with-love">
+    <i class="fa fa-eye"></i>
+  </span>
+  本站访客数：<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
